@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="shortcut icon" href="#">
+    <title>DOM Manip</title>
+    <style>
+   .container{
+    width: 330px;
+    display: flex;
+    align-content: center;
+    justify-content:space-around;
+
+   }
+   
+  
+   .colorSquare:hover{
+    opacity: 0.5;
+    cursor: pointer;
+   }
+
+   .container2{
+    display: flex;
+    width: 330px;
+    align-content: center;
+    justify-content: center;
+   }
+   .reset{
+    width: 90px;
+    height: 40px;
+
+   }
+
+    </style>
+ 
+  </head>
+
+  <body>
+    <div class="container">
+<div  >
+  <button id="red" class="colorSquare" value="red" style=" width: 100px;height: 100px;background-color: red;border-style: none;"><p id="redCount" ></p></button>
+</div>
+<div >
+  <button id="yellow" class="colorSquare" value="yellow" style=" width: 100px;height: 100px;background-color: yellow;border-style: none;"><p id="yellowCount"></p></button>
+</div>
+<div>
+  <button id="green" class="colorSquare" value="green" style=" width: 100px;height: 100px;background-color: green;border-style: none;"><p id="greenCount"></p></button>
+
+<div><h1 id="warning"></h1> </div>
+</div>
+
+
+</div>
+<div class="container2">
+<button class="reset" id="reset">RESET</button>
+</div>
+  </body>
+
+
+  
+  <script src="colour-button.js"></script>
+ 
+</html>
