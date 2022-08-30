@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+    border: red;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  img.background {
+    position: absolute; 
+    z-index: -1;
+    filter: blur(3px);
+  }
+
+  body{
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #130f40;
+    /* background-image: url("./weather_background.jpg"); */
+    font-family: 'Lato' !important;
+  }
+/* location */
+#location{
+flex: 1;
+width: 100%;
+
+}
+
+/* location end */
+
+ /* search box  */
+  .search-box{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+  }
+  .input-search{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: #22a6b3;
+    padding-right: 40px;
+    color:#fff;
+  }
+  .input-search::placeholder{
+    color:rgba(255,255,255,.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  .btn-search{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color:#ffffff ;
+    background-color:transparent;
+    pointer-events: painted;  
+  }
+  .btn-search:focus ~ .input-search{
+    width: 300px;
+    border-radius: 5px;
+    background-color: #22a6b3;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  .input-search:focus{
+    width: 300px;
+    border-radius: 20px;
+    background-color: #22a6b3;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  
+  /* search box ends */
+
+  /* weather icon */
+  .iconBox{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #icon{
+    
+    
+  }
+
+   /* weather icon ends*/
+
+   /* Temp number */
+#temp{
+    flex: 1;
+    width: 100%;
+}
+
+   /* Temp number ends*/
+
+   /* charts */
+#chart{
+    flex: 2;
+    width: 100%;
+}
+
+   /* charts end */
+/* 
+   hourly forecast */
+#hourly{
+    flex: 1;
+    width: 100%;
+}
+
+   /* hourly forecast ends*/
+/* daily    */
+#daily{
+    flex: 3;
+    width: 100%;
+}
+
+/* daily end   */
