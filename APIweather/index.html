@@ -5,26 +5,180 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img class="background" src="./weather_background.jpg" alt="Pineapple">
-   <div id="location"></div>
+    <img class="background" src="./weather_background.jpg" alt="rainscreen">
+   <div class="locatBox">
+    <div id="town"></div>
+    <div id="region"></div>
+    <div id="country"></div>
+
+   </div>
    <div class="search-box">
-    <button class="btn-search"><i class="fas fa-search"></i></button>
-    <input type="text" class="input-search" placeholder="Type to Search...">
+    <input type="text" class="input-search" placeholder="Search by City...">
   </div>
   <div class="iconBox">
-   <div id="icon">icon</div>
+   <div id="icon"> </div>
 </div>
-<div class="tempBox">
-   <span id="temp"></span><span>&#8451;</span>
-</div>
+
    
-   <div id="chart">charts</div>
+   <div class="chartBox">
+      <div id="chart" class="semi-donut margin" 
+      >
+
+      <div class="tempBox">
+         <div id="temp"></div><div class="deg">&#8451;</div>
+      </div>
+ </div>
+
+   <div class="TempFigures">
+<div class="tempGroup">
+   <span>Min</span>
+   <div id="minTemp"></div>
 </div>
-   <div id="hourly">hourly</div>
-   <div id="daily">daily</div>
+<div class="tempGroup">
+   <div id="maxTemp">HIGH</div>
+   <span>Max</span>
+</div>
+   </div>
+   </div>
+</div>
+   <div id="hourlyBox">
+    <div  class="hourly">
+        <div class="hourlyItem" >
+        <div id="hourlyIcon0"> </div>
+        <div id="hourly0"></div>
+        <div id="hourTime0"> </div>
+        </div>
+        <div class="hourlyItem" >
+        <div id="hourlyIcon1"> </div>
+        <div id="hourly1"> </div>
+        <div>1am</div>
+        </div>
+        <div class="hourlyItem" >
+        <div id="hourlyIcon2"> </div>
+        <div id="hourly2"></div>
+        <div>2am</div>
+        </div>
+        <div class="hourlyItem">
+        <div id="hourlyIcon3"> </div>
+        <div id="hourly3"></div>
+        <div>3am</div>
+        </div>
+        <div class="hourlyItem" >
+        <div id="hourlyIcon4"> </div>
+        <div id="hourly4"></div>
+        <div>4am</div>
+        </div>
+        <div class="hourlyItem" >
+        <div id="hourlyIcon5"> </div>
+        <div id="hourly5"></div>
+        <div>5am</div>
+        </div>
+        <div class="hourlyItem" >
+        <div id="hourlyIcon6"> </div>  
+        <div id="hourly6"></div>
+        <div>6am</div>
+        </div>
+        <div class="hourlyItem" >
+        <div id="hourlyIcon7"> </div>   
+        <div id="hourly7"></div>
+        <div>7am</div>
+        </div>
+        <div class="hourlyItem">
+         <div id="hourlyIcon8"> </div> 
+        <div  id="hourly8"></div>
+        <div>8am</div>
+        </div>
+        <div class="hourlyItem" >
+         <div id="hourlyIcon9"> </div> 
+        <div id="hourly9"></div>
+        <div>9am</div>
+        </div>
+        <div class="hourlyItem" >
+         <div id="hourlyIcon10"> </div> 
+        <div id="hourly10"></div>
+        <div>10am</div>
+        </div>
+        <div class="hourlyItem">
+         <div id="hourlyIcon11"> </div> 
+        <div id="hourly11"></div>
+        <div>11pm</div>
+        </div>
+        <div class="hourlyItem" >
+         <div id="hourlyIcon12"> </div> 
+        <div id="hourly12"></div>
+        <div>Midday</div>
+        </div>
+        <div class="hourlyItem">
+         <div id="hourlyIcon13"> </div> 
+        <div id="hourly13"></div>
+        <div>1pm</div>
+        </div>
+        <div class="hourlyItem" >
+         <div id="hourlyIcon14"> </div> 
+        <div id="hourly14"></div>
+        <div>2pm</div>
+        </div>
+        <div class="hourlyItem" >
+         <div id="hourlyIcon15"> </div> 
+        <div id="hourly15"></div>
+        <div>3pm</div>
+        </div>
+        <div class="hourlyItem" >
+         <div id="hourlyIcon16"> </div> 
+        <div id="hourly16"></div>
+        <div>4pm</div>
+        </div>
+        <div class="hourlyItem">
+         <div id="hourlyIcon17"> </div> 
+        <div id="hourly17"></div>
+        <div>5pm</div>
+        </div>
+        <div class="hourlyItem" >
+         <div id="hourlyIcon18"> </div> 
+        <div id="hourly18"></div>
+        <div>6pm</div>
+        </div>
+        <div class="hourlyItem" >
+         <div id="hourlyIcon19"> </div> 
+        <div id="hourly19"></div>
+        <div>7pm</div>
+        </div>
+        <div class="hourlyItem" >
+         <div id="hourlyIcon20"> </div> 
+        <div id="hourly20"></div>
+        <div>8pm</div>
+        </div>
+        <div class="hourlyItem">
+         <div id="hourlyIcon21"> </div> 
+        <div id="hourly21"></div>
+        <div>9pm</div>
+        </div>
+       
+        <div class="hourlyItem">
+         <div id="hourlyIcon22"> </div> 
+        <div id="hourly22"></div>
+        <div>10pm</div>
+        </div>
+
+        <div class="hourlyItem">
+         <div id="hourlyIcon23"> </div> 
+        <div id="hourly23"></div>
+        <div>11pm</div>
+        </div>
+
+        
+    </div>
+    </div>
+   <div id="dailyBox">
+    <div class="daily"></div>
+   </div>
 
    
 
@@ -32,4 +186,6 @@
   
 </body>
 <script src="./script.js"></script>
+
+
 </html>
