@@ -1,3 +1,5 @@
+let URL = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=shrewsbury&days=3`;
+
 const icon = document.getElementById("icon")
 const town = document.getElementById("town")
 const region = document.getElementById("region")
@@ -75,12 +77,16 @@ const options = {
         }
     };
 
-    const getWeather = (search) => {
-        search = document.getElementById("input-search")
-        const location = search.value
-        URL = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${location}&days=3`;
-console.log({URL})
-    fetch(`${URL}`, options)
+   
+  
+   
+   
+  
+
+        const getWeather = () => {
+
+        console.log(`in getWather funciton ${URL}`)
+        fetch(`${URL}`, options)
         .then(response => response.json())
         .then(response => {
             console.log(response);
@@ -88,7 +94,7 @@ console.log({URL})
             region.innerText = `${response.location.region}` 
             country.innerText = `${response.location.country}` 
             icon.innerHTML = `<img src='${response.current.condition.icon}'height=250 width=250/>`
-            temp.innerText = `${response.current.temp_c}`
+            temp.innerText = (`${response.current.temp_c}` + `°C`)
             minTemp.innerText = `${response.forecast.forecastday[0].day.mintemp_c}`
             maxTemp.innerText = `${response.forecast.forecastday[0].day.maxtemp_c}`
             hourly0.innerText = `${response.forecast.forecastday[0].hour[0].temp_c}`
@@ -165,18 +171,31 @@ console.log({URL})
         //    .catch(err => console.error(err));
         })
     }
-         
-        addEventListener("keydown", function(event) {
-            if (event.key === "Enter") { 
-              getWeather()
-            }
-          });
-          
+    
 
-        window.addEventListener('load', () => {
-            let scrollElement = document.querySelector('.hourly');
-            scrollElement.scrollLeft =  (scrollElement.scrollWidth - 
-            scrollElement.clientWidth ) / 1.705;
-          });
 
           
+    window.addEventListener('load', () => {
+        let scrollElement = document.querySelector('.hourly');
+        scrollElement.scrollLeft =  (scrollElement.scrollWidth - 
+        scrollElement.clientWidth ) / 1.705;
+        getWeather()
+      }); 
+
+
+      addEventListener("keydown", function(event) {
+        if (event.key === "Enter") { 
+          getLocation()
+        }
+      });
+
+
+    const getLocation = () =>{
+        search = document.getElementById("input-search")
+        const location = search.value
+        URL = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${location}&days=3`;
+        console.log(URL)
+        getWeather()
+        return URL
+    }
+ 

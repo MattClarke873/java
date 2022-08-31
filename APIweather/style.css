@@ -80,8 +80,10 @@ text-align: center;
     z-index: -1;
     margin-bottom: 20px;
   }
-  #icon{
-    margin-top: -30px;
+  div#icon{
+    width: 200px;
+    height: 200px;
+    
     
   }
 
@@ -92,17 +94,20 @@ text-align: center;
     display: flex;
     height: 60px;
     display: flex;
+    justify-content: center;
+    align-items: center;
 
 }   
 
 #temp{
     height: 60px;
     width: 100px;
-    font-size: 80px;
+    font-size: 40px;
     text-align: center;
     font-family: roboto;
-    margin-top: -20px;
+    margin-top: 20px;
     color: black;
+    text-align: center;
 }
 
 .deg{
@@ -122,7 +127,9 @@ text-align: center;
 
 
 .semi-donut {
+   
     margin: 0;
+    margin-top: 30px;
     --percentage: 0;
     --fill: rgb(0, 255, 13);
     width: 300px;
