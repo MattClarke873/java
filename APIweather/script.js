@@ -145,7 +145,7 @@ const options = {
             hourlyIcon22.innerHTML = `<img src='${response.forecast.forecastday[0].hour[22].condition.icon}'height=20 width=20/>`
             hourly23.innerText = `${response.forecast.forecastday[0].hour[23].temp_c}`
             hourlyIcon23.innerHTML = `<img src='${response.forecast.forecastday[0].hour[23].condition.icon}'height=20 width=20/>`
-
+            
 
             iconDay1.innerHTML = `<img src='${response.forecast.forecastday[0].day.condition.icon}'height=20 width=20/>`
             avgDay1.innerText = `${response.forecast.forecastday[0].day.avgtemp_c}`
@@ -159,12 +159,23 @@ const options = {
             avgDay3.innerText = `${response.forecast.forecastday[2].day.avgtemp_c}`
             dateDay3.innerText = `${response.forecast.forecastday[2].date}`
 
-            let diffTemp = temp.innerText - minTemp.innerText;
+            let Tnow = `${response.current.temp_c}`
+            
+            let MinT = minTemp.innerText
+            let MaxT = maxTemp.innerText
+
+
+            let diffTemp = Tnow- minTemp.innerText
             let range = maxTemp.innerText - minTemp.innerText;
             let leftRange = diffTemp/range*100;
 
-            console.log(leftRange)
-
+            console.log({Tnow})
+            console.log({MinT})
+            console.log({MaxT})
+            console.log({diffTemp})
+            console.log({range})
+            console.log({leftRange})
+            
             chart.setAttribute(
                 `style`, 
                 `--percentage: ${leftRange}`)           

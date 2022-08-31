@@ -108,15 +108,11 @@ text-align: center;
     text-align: center;
     font-family: roboto;
     margin-top: 20px;
-    color: black;
+    color: #ffffffbb;
     text-align: center;
 }
 
-.deg{
-    margin-top: -10px;
-    margin-left: -10px;
-    color: black;
-}
+
    /* Temp number ends*/
 
    /* charts */
@@ -175,6 +171,7 @@ text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
+    color: #ffffffbb;
 }
 
 .tempGroup{
@@ -200,7 +197,7 @@ text-align: center;
     align-items: center;
     width: 360px;
     height: 100px;
-    background-color: rgba(211, 211, 211, 0.9);
+    background-color: rgba(211, 211, 211, 0.8);
     border:1px solid rgb(190, 190, 190);
     border-radius: 22px;
     overflow-x: scroll;
@@ -255,7 +252,7 @@ text-align: center;
     height: 180px;
     width: 350px;
     border-radius: 20px;
-    background-color: rgba(211, 211, 211, 0.9);
+    background-color: rgba(211, 211, 211, 0.8);
     border:1px solid rgb(190, 190, 190);
     display: flex;
     gap: 10px;
