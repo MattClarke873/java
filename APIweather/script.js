@@ -1,5 +1,3 @@
-const URL = "https://weatherapi-com.p.rapidapi.com/forecast.json?q=shawbury%2C%20uk&days=3";
-
 const icon = document.getElementById("icon")
 const town = document.getElementById("town")
 const region = document.getElementById("region")
@@ -10,8 +8,6 @@ const minTemp = document.getElementById("minTemp")
 const maxTemp = document.getElementById("maxTemp")
 const hourly0 =  document.getElementById("hourly0")
 const hourlyIcon0 =  document.getElementById("hourlyIcon0")
-const hourTime0 =  document.getElementById("hourTime0")
-
 const hourly1 =  document.getElementById("hourly1")
 const hourlyIcon1 =  document.getElementById("hourlyIcon1")
 const hourly2 =  document.getElementById("hourly2")
@@ -59,6 +55,18 @@ const hourlyIcon22 =  document.getElementById("hourlyIcon22")
 const hourly23=  document.getElementById("hourly23")
 const hourlyIcon23 =  document.getElementById("hourlyIcon23")
 
+const iconDay1 = document.getElementById("iconDay1")
+const avgDay1  = document.getElementById("avgDay1")
+const dateDay1 = document.getElementById("dateDay1")
+
+const iconDay2 = document.getElementById("iconDay2")
+const avgDay2  = document.getElementById("avgDay2")
+const dateDay2 = document.getElementById("dateDay2")
+
+const iconDay3 = document.getElementById("iconDay3")
+const avgDay3  = document.getElementById("avgDay3")
+const dateDay3 = document.getElementById("dateDay3")
+
 const options = {
         method: 'GET',
         headers: {
@@ -66,7 +74,12 @@ const options = {
             'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
     };
-    
+
+    const getWeather = (search) => {
+        search = document.getElementById("input-search")
+        const location = search.value
+        URL = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${location}&days=3`;
+console.log({URL})
     fetch(`${URL}`, options)
         .then(response => response.json())
         .then(response => {
@@ -80,11 +93,6 @@ const options = {
             maxTemp.innerText = `${response.forecast.forecastday[0].day.maxtemp_c}`
             hourly0.innerText = `${response.forecast.forecastday[0].hour[0].temp_c}`
             hourlyIcon0.innerHTML = `<img src='${response.forecast.forecastday[0].hour[0].condition.icon}'height=20 width=20/>`
-            let hourTime0 = `${response.forecast.forecastday[0].hour[0].time}`
-            console.log( (hourTime0.slice(hourTime0.length - 5)))
-            hourTime0.innerText =  `${hourTime0}.slice(${hourTime0}.length - 5)`
-            
-
             hourly1.innerText = `${response.forecast.forecastday[0].hour[1].temp_c}`
             hourlyIcon1.innerHTML = `<img src='${response.forecast.forecastday[0].hour[1].condition.icon}'height=20 width=20/>`
             hourly2.innerText = `${response.forecast.forecastday[0].hour[2].temp_c}`
@@ -133,26 +141,42 @@ const options = {
             hourlyIcon23.innerHTML = `<img src='${response.forecast.forecastday[0].hour[23].condition.icon}'height=20 width=20/>`
 
 
+            iconDay1.innerHTML = `<img src='${response.forecast.forecastday[0].day.condition.icon}'height=20 width=20/>`
+            avgDay1.innerText = `${response.forecast.forecastday[0].day.avgtemp_c}`
+            dateDay1.innerText = `${response.forecast.forecastday[0].date}`
 
+            iconDay2.innerHTML = `<img src='${response.forecast.forecastday[1].day.condition.icon}'height=20 width=20/>`
+            avgDay2.innerText = `${response.forecast.forecastday[1].day.avgtemp_c}`
+            dateDay2.innerText = `${response.forecast.forecastday[1].date}`
+
+            iconDay3.innerHTML = `<img src='${response.forecast.forecastday[2].day.condition.icon}'height=20 width=20/>`
+            avgDay3.innerText = `${response.forecast.forecastday[2].day.avgtemp_c}`
+            dateDay3.innerText = `${response.forecast.forecastday[2].date}`
 
             let diffTemp = temp.innerText - minTemp.innerText;
             let range = maxTemp.innerText - minTemp.innerText;
             let leftRange = diffTemp/range*100;
-            let rightRange = 100 - leftRange;
+
+            console.log(leftRange)
 
             chart.setAttribute(
                 `style`, 
-                `--percentage: ${leftRange}`)
-
-
-       
-            console.log({diffTemp})
-            console.log({range})
-            console.log({leftRange})
-            console.log({rightRange})
+                `--percentage: ${leftRange}`)           
         //    .catch(err => console.error(err));
         })
+    }
+         
+        addEventListener("keydown", function(event) {
+            if (event.key === "Enter") { 
+              getWeather()
+            }
+          });
+          
 
+        window.addEventListener('load', () => {
+            let scrollElement = document.querySelector('.hourly');
+            scrollElement.scrollLeft =  (scrollElement.scrollWidth - 
+            scrollElement.clientWidth ) / 1.705;
+          });
 
-
-        
+          

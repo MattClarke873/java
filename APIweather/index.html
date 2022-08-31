@@ -1,3 +1,6 @@
+<!-- https://rapidapi.com/weatherapi/api/weatherapi-com/ -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +23,7 @@
 
    </div>
    <div class="search-box">
-    <input type="text" class="input-search" placeholder="Search by City...">
+    <input type="text" class="input-search" id="input-search" placeholder="Search by City...">
   </div>
   <div class="iconBox">
    <div id="icon"> </div>
@@ -31,7 +34,7 @@
       <div id="chart" class="semi-donut margin" 
       >
 
-      <div class="tempBox">
+      <div class="tempBoxTop">
          <div id="temp"></div><div class="deg">&#8451;</div>
       </div>
  </div>
@@ -42,7 +45,7 @@
    <div id="minTemp"></div>
 </div>
 <div class="tempGroup">
-   <div id="maxTemp">HIGH</div>
+   <div id="maxTemp"> </div>
    <span>Max</span>
 </div>
    </div>
@@ -50,134 +53,273 @@
 </div>
    <div id="hourlyBox">
     <div  class="hourly">
+      
         <div class="hourlyItem" >
         <div id="hourlyIcon0"> </div>
-        <div id="hourly0"></div>
-        <div id="hourTime0"> </div>
+        <div class="tempBox">
+        <div id="hourly0"></div> 
+        <div class="smallDeg">&#8451;</div>
+      </div>
+        <div id="hourTime0">00:00  </div>
+      
         </div>
+
         <div class="hourlyItem" >
         <div id="hourlyIcon1"> </div>
-        <div id="hourly1"> </div>
-        <div>1am</div>
+        <div class="tempBox">
+         <div id="hourly1"></div> 
+         <div class="smallDeg">&#8451;</div>
+       </div>
+        <div id="hourTime0">01:00  </div>   
         </div>
+
         <div class="hourlyItem" >
         <div id="hourlyIcon2"> </div>
+        <div class="tempBox">
+         <div id="hourly2"></div> 
+         <div class="smallDeg">&#8451;</div>
+       </div>
         <div id="hourly2"></div>
-        <div>2am</div>
+        <div id="hourTime0">02:00  </div>       
         </div>
+
         <div class="hourlyItem">
         <div id="hourlyIcon3"> </div>
+        <div class="tempBox">
+         <div id="hourly3"></div> 
+         <div class="smallDeg">&#8451;</div>
+       </div>
         <div id="hourly3"></div>
-        <div>3am</div>
+        <div id="hourTime0">03:00  </div>      
         </div>
+
         <div class="hourlyItem" >
         <div id="hourlyIcon4"> </div>
+        <div class="tempBox">
+         <div id="hourly4"></div> 
+         <div class="smallDeg">&#8451;</div>
+       </div>
         <div id="hourly4"></div>
-        <div>4am</div>
+        <div id="hourTime0">04:00  </div>      
         </div>
+
         <div class="hourlyItem" >
         <div id="hourlyIcon5"> </div>
+        <div class="tempBox">
+         <div id="hourly5"></div> 
+         <div class="smallDeg">&#8451;</div>
+       </div>
         <div id="hourly5"></div>
-        <div>5am</div>
+        <div id="hourTime0">05:00  </div>      
         </div>
+
         <div class="hourlyItem" >
         <div id="hourlyIcon6"> </div>  
+        <div class="tempBox">
+         <div id="hourly6"></div> 
+         <div class="smallDeg">&#8451;</div>
+       </div>
         <div id="hourly6"></div>
-        <div>6am</div>
+        <div id="hourTime0">06:00  </div>       
         </div>
+
         <div class="hourlyItem" >
-        <div id="hourlyIcon7"> </div>   
+        <div id="hourlyIcon7"> </div> 
+        <div class="tempBox">
+         <div id="hourly7"></div> 
+         <div class="smallDeg">&#8451;</div>
+       </div>  
         <div id="hourly7"></div>
-        <div>7am</div>
+        <div id="hourTime0">07:00  </div>      
         </div>
+
         <div class="hourlyItem">
          <div id="hourlyIcon8"> </div> 
+         <div class="tempBox">
+            <div id="hourly8"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div  id="hourly8"></div>
-        <div>8am</div>
-        </div>
+        <div id="hourTime0">08:00  </div>      
+      </div>
+
         <div class="hourlyItem" >
          <div id="hourlyIcon9"> </div> 
+         <div class="tempBox">
+            <div id="hourly9"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly9"></div>
-        <div>9am</div>
-        </div>
+        <div id="hourTime0">09:00  </div>     
+      </div>
+
         <div class="hourlyItem" >
          <div id="hourlyIcon10"> </div> 
+         <div class="tempBox">
+            <div id="hourly10"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly10"></div>
-        <div>10am</div>
-        </div>
+        <div id="hourTime0">10:00  </div>      
+      </div>
+
         <div class="hourlyItem">
          <div id="hourlyIcon11"> </div> 
+         <div class="tempBox">
+            <div id="hourly11"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly11"></div>
-        <div>11pm</div>
-        </div>
-        <div class="hourlyItem" >
+        <div id="hourTime0">11:00  </div>
+      </div>
+      
+      <div class="hourlyItem" >
          <div id="hourlyIcon12"> </div> 
+         <div class="tempBox">
+            <div id="hourly12"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly12"></div>
-        <div>Midday</div>
-        </div>
+        <div id="hourTime0">12:00  </div>     
+      </div>
+
         <div class="hourlyItem">
          <div id="hourlyIcon13"> </div> 
+         <div class="tempBox">
+            <div id="hourly13"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly13"></div>
-        <div>1pm</div>
-        </div>
+        <div id="hourTime0">13:00  </div>   
+      </div>
+
         <div class="hourlyItem" >
          <div id="hourlyIcon14"> </div> 
+         <div class="tempBox">
+            <div id="hourly14"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly14"></div>
-        <div>2pm</div>
-        </div>
-        <div class="hourlyItem" >
+        <div id="hourTime0">14:00  </div>
+         </div>
+      
+         <div class="hourlyItem" >
          <div id="hourlyIcon15"> </div> 
+         <div class="tempBox">
+            <div id="hourly15"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly15"></div>
-        <div>3pm</div>
+        <div id="hourTime0">15:00  </div>
         </div>
+   
         <div class="hourlyItem" >
          <div id="hourlyIcon16"> </div> 
+         <div class="tempBox">
+            <div id="hourly16"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly16"></div>
-        <div>4pm</div>
-        </div>
+        <div id="hourTime0">16:00  </div>    
+      </div>
+
         <div class="hourlyItem">
          <div id="hourlyIcon17"> </div> 
+         <div class="tempBox">
+            <div id="hourly17"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly17"></div>
-        <div>5pm</div>
-        </div>
+        <div id="hourTime0">17:00  </div>     
+      </div>
+
         <div class="hourlyItem" >
          <div id="hourlyIcon18"> </div> 
+         <div class="tempBox">
+            <div id="hourly18"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly18"></div>
-        <div>6pm</div>
-        </div>
+        <div id="hourTime0">18:00  </div>      
+      </div>
+
         <div class="hourlyItem" >
          <div id="hourlyIcon19"> </div> 
+         <div class="tempBox">
+            <div id="hourly19"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly19"></div>
-        <div>7pm</div>
-        </div>
+        <div id="hourTime0">19:00  </div>      
+      </div>
+
         <div class="hourlyItem" >
          <div id="hourlyIcon20"> </div> 
+         <div class="tempBox">
+            <div id="hourly20"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly20"></div>
-        <div>8pm</div>
-        </div>
+        <div id="hourTime0">20:00  </div>
+      </div>
+
         <div class="hourlyItem">
          <div id="hourlyIcon21"> </div> 
+         <div class="tempBox">
+            <div id="hourly21"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly21"></div>
-        <div>9pm</div>
-        </div>
+        <div id="hourTime0">21:00  </div>
+      </div>
        
         <div class="hourlyItem">
          <div id="hourlyIcon22"> </div> 
+         <div class="tempBox">
+            <div id="hourly22"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly22"></div>
-        <div>10pm</div>
+        <div id="hourTime0">22:00  </div>
         </div>
 
         <div class="hourlyItem">
          <div id="hourlyIcon23"> </div> 
+         <div class="tempBox">
+            <div id="hourly23"></div> 
+            <div class="smallDeg">&#8451;</div>
+          </div>
         <div id="hourly23"></div>
-        <div>11pm</div>
+        <div id="hourTime0">23:00  </div>
         </div>
 
         
     </div>
     </div>
    <div id="dailyBox">
-    <div class="daily"></div>
+    <div class="daily">
+<div class="day">
+<div id="iconDay1">  </div>
+<div id="avgDay1"> </div>
+<div id="dateDay1"> </div>
+</div>
+
+<div class="day">
+<div id="iconDay2">  </div>
+<div id="avgDay2"> </div>
+<div id="dateDay2"> </div>
+</div>
+
+
+<div class="day">
+<div id="iconDay3">   </div>
+<div id="avgDay3"> </div>
+<div id="dateDay3"> </div>
+</div>
+</div>
+
+</div>
+</div>
    </div>
 
    

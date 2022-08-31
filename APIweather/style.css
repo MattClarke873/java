@@ -6,6 +6,7 @@
     /* border: red;
     border-width: 1px;
     border-style: solid; */
+    font-family: roboto;
   }
 
   img.background {
@@ -28,9 +29,10 @@
   
   }
 /* location */
-#locatBox{
-flex: 1;
+.locatBox{
+height: 140px;
 width: 100%;
+
 
 }
 
@@ -39,6 +41,7 @@ font-weight: 600;
 font-size: 60px;  
 font-family: roboto;
 text-align: center;
+margin-top: 5px;
 }
 
 #region{
@@ -53,22 +56,19 @@ font-family: roboto;
 text-align: center;
 
 }
-
-
-
-
 /* location end */
+ /* search box  */
+
 .input-search{
     width: 250px;
     height:40px;
     margin-top: 10px;
     border-radius: 20px;
     background-color: lightgray;
-}
-
- /* search box  */
-
-  
+    border: none ;
+    box-shadow: 1.5px 1.5px 3px 1px #000000;
+    padding-left: 20px;
+}  
   /* search box ends */
 
   /* weather icon */
@@ -88,9 +88,10 @@ text-align: center;
    /* weather icon ends*/
 
    /* Temp number */
-.tempBox{
+.tempBoxTop{
     display: flex;
     height: 60px;
+    display: flex;
 
 }   
 
@@ -175,6 +176,7 @@ text-align: center;
    hourly forecast */
 #hourlyBox{
     flex: 1;
+    margin-top: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -197,18 +199,19 @@ text-align: center;
 }
 
 
+
 .hourlyItem{
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100px;
     height: 80px;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 5px;
-    margin-top: 5px;
-    margin-left: 10px;
-    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 15px;
     font-size: 20px;
     box-shadow: 1.5px 1.5px 3px 1px #000000;
     
@@ -217,6 +220,16 @@ text-align: center;
 .hourlyItem img {
     width: 30px;
     height: 30px;
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+.tempBox{
+    display: flex;
+    margin-left: 10px;
+}
+.smallDeg {
+    font-size: 12px;
+    margin-left:-1px ;
 }
    /* hourly forecast ends*/
 /* daily    */
@@ -231,9 +244,33 @@ text-align: center;
 .daily{
     height: 180px;
     width: 350px;
-    border-radius: 25px;
+    border-radius: 20px;
     background-color: rgba(211, 211, 211, 0.9);
     border:1px solid rgb(190, 190, 190);
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.day{
+    border:1px solid black; 
+    box-shadow: 1.5px 1.5px 3px 1px #000000;
+    border-radius: 10px;  
+    width: 100px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.day img{
+    width:70px;
+    height:70px;
+    margin-bottom: -30px;
+}
+
+
 
 /* daily end   */
