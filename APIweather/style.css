@@ -28,6 +28,21 @@
     background-image: url("./weather_background.jpg");
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.45);
   }
+
+  @media only screen and (max-width: 414px) {
+    body {
+        
+        background-image: url("./weather_background.jpg");
+    }
+  }
+  @media only  screen and (min-width: 415px) {
+    body {
+        
+        background-image: url("./wolfgang-hasselmann-bR_-gllg7Bs-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  }
 /* location */
 .locatBox{
 height: 140px;
@@ -223,6 +238,10 @@ text-align: center;
     box-shadow: 1.5px 1.5px 3px 1px #000000;
     
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }
 
 .hourlyItem img {
     width: 30px;
